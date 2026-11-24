@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SummitPinnacle — elevated live step-grid desk</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="tap-overlay">Tap to start audio<br><small>iOS: silent switch mutes Web Audio</small></div>
+<header>
+  <h1>SummitPinnacle</h1>
+  <div id="status">Loading samples…</div>
+</header>
+<section class="controls">
+  <label>BPM <input id="bpm" type="number" min="60" max="180" value="92"></label>
+  <label>Key <select id="key">
+    <option value="A minor">A minor</option>
+    <option value="C major">C major</option>
+    <option value="D minor">D minor</option>
+    <option value="E minor">E minor</option>
+    <option value="G major">G major</option>
+    <option value="F major">F major</option>
+    <option value="Bb major">Bb major</option>
+    <option value="D major">D major</option>
+    <option value="E major">E major</option>
+  </select></label>
+  <label>Chords <input id="chords" value="Am F C G" placeholder="Am F C G"></label>
+  <label>Bars <select id="bars">
+    <option value="2">2</option>
+    <option value="4">4</option>
+    <option value="8" selected>8</option>
+    <option value="16">16</option>
+  </select></label>
+  <label>Swing <input id="swing" type="range" min="0" max="60" value="0"> <span id="swing-val">0%</span></label>
+  <label>Humanize <input id="humanize" type="range" min="0" max="40" value="0"> <span id="humanize-val">0%</span></label>
+  <label>Delay <input id="delay" type="range" min="0" max="40" value="0"> <span id="delay-val">0%</span></label>
+  <label>Filter <input id="filter" type="range" min="400" max="12000" value="8000"> <span id="filter-val">8000 Hz</span></label>
+  <label>Record <select id="record-arm">
+    <option value="">off</option>
+    <option value="kick">kick</option>
+    <option value="snare">snare</option>
+    <option value="hat">hat</option>
+    <option value="crash">crash</option>
+    <option value="tom">tom</option>
+    <option value="bass">bass</option>
+    <option value="piano">piano</option>
+    <option value="guitar">guitar</option>
+    <option value="violin">violin</option>
+  </select> <span id="record-status">Record off</span></label>
+  <div id="recipes"></div>
+  <button id="play">Play</button>
+  <button id="stop">Stop</button>
+  <button id="export-wav">Export WAV (folded)</button>
+  <button id="export-tail">Export WAV (with tail)</button>
+  <button id="export-midi">Export MIDI</button>
+  <button id="export-stems">Export Stems</button>
+</section>
+<div id="playhead-wrap"><div id="playhead"></div></div>
+<section id="grids"></section>
+<div id="punch"></div>
+<script src="app.js"></script>
+</body>
+</html>
